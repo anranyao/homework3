@@ -1,5 +1,4 @@
-# homework3
-# The R package
+# homework3: R package
 
 ## Description
 
