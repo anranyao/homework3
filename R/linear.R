@@ -1,10 +1,6 @@
 linear <- function(formula.lm, data) {
   if (class(formula.lm) != "formula")
     stop("'formula.lm' must be a formula")
-  if (is.data.frame(data) != TRUE) {
-    warning("'data' is changed to a data.frame")
-    data = as.data.frame(data)
-  }
   newdata <- na.omit(data[, all.vars(formula.lm)])
   response <- newdata[, 1]
   variables <- model.matrix(formula.lm, data = newdata)

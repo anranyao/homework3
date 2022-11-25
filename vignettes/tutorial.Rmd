@@ -1,0 +1,49 @@
+---
+title: "tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(homework3)
+```
+
+To use the function:
+```{r}
+data<-data("mydata")
+
+# error: not a formula
+# linear(c(1,2,3),data)
+
+cc<-Depression ~ conFatalism + Sex + R_E + factor(Age1)
+results<-linear(cc,mydata)
+```
+
+To compare the results against the original R function lm()
+```{r}
+resultslm<-lm(cc,data=mydata)
+resultscc<-summary(resultslm)
+all.equal(as.matrix(results$Coefficients),as.matrix(resultscc$coefficients),check.attributes = FALSE)
+all.equal(as.numeric(results$fittedvalues),as.numeric(resultslm$fitted.values))
+all.equal(as.numeric(results$residual),as.numeric(resultscc$residuals))
+all.equal(results$residual.std.error,resultscc$sigma)
+all.equal(results$R_squared,resultscc$r.squared)
+all.equal(results$Adjusted.R_squared,resultscc$adj.r.squared)
+all.equal(as.numeric(results$F.value),as.numeric(resultscc$fstatistic[1]))
+
+# install.packages("bench")
+result = bench::mark(as.numeric(linear(cc,mydata)$F.value),as.numeric(summary(lm(cc,data=mydata))$fstatistic[1]))
+print(result)
+plot(result)
+```
+
