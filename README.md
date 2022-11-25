@@ -1,5 +1,7 @@
 # homework3: R package
-
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/anranyao/homework3/workflows/R-CMD-check/badge.svg)](https://github.com/anranyao/homework3/actions)
+  <!-- badges: end -->
 ## Description
 
 The package includes a function and a dataset.
