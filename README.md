@@ -2,6 +2,9 @@
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/anranyao/homework3/workflows/R-CMD-check/badge.svg)](https://github.com/anranyao/homework3/actions)
   <!-- badges: end -->
+  <!-- badges: start -->
+  [![Codecov test coverage](https://codecov.io/gh/anranyao/homework3/branch/main/graph/badge.svg)](https://app.codecov.io/gh/anranyao/homework3?branch=main)
+  <!-- badges: end -->
 ## Description
 
 The package includes a function and a dataset.
