@@ -29,7 +29,7 @@
 #'coef_c
 #'results$F.value
 #'## input"formula.lm" must be a formula.
-#' \donttest{
+#' \dontrun{
 #' attach(mydata)
 #'    linear(Sex,mydata)
 #' }

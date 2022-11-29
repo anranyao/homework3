@@ -30,7 +30,7 @@ coef_c<-results$Coefficients # the coefficients and its related values.
 coef_c
 results$F.value
 ## input"formula.lm" must be a formula.
-\donttest{
+\dontrun{
 attach(mydata)
    linear(Sex,mydata)
 }
